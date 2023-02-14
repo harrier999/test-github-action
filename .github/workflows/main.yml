@@ -15,4 +15,8 @@ jobs:
           password: ${{ secrets.REMOTE_PASSWORD }}
           script: |
             cd ${{ secrets.REMOTE_TARGET }}
-            echo "something happen" >> log.txt
+            git pull
+            screen -X -S ${{ secrets.MAGIC_WORD }} kill
+            screen -S ${{ secrets.MAGIC_WORD }}
+            go run main.go
+            
