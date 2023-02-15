@@ -17,6 +17,4 @@ jobs:
             cd ${{ secrets.REMOTE_TARGET }}
             git pull
             screen -X -S ${{ secrets.MAGIC_WORD }} kill
-            screen -S ${{ secrets.MAGIC_WORD }}
-            go run main.go
-            
+            screen -S ${{ secrets.MAGIC_WORD }} -dm go run main.go
